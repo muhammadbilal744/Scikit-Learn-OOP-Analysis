@@ -11,7 +11,7 @@ An exhaustive architectural investigation into the Object-Oriented Programming (
 
 * *Submitted to:* Dr. Akmal Shahbaz  
 * *Department:* Department of Data Science, The Islamia University of Bahawalpur  
-* *Subject:* Object-Oriented Programming (BS Data Science — 2nd Semester)  
+* *Subject:* Object-Oriented Programming (BS Data Science — 2nd Semester — M2 Section)  
 * *Session:* 2026
 
 ---
