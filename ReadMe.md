@@ -1,8 +1,11 @@
 # Object-Oriented Analysis of Scikit-Learn Library
 
-An exhaustive architectural investigation into the Object-Oriented Programming (OOP) patterns, design principles, and concrete layout structures governing the Scikit-learn framework. This repository features a professional technical report alongside a functional, custom 3-class machine learning extension ecosystem built over standard Scikit-learn interfaces.
+This project presents an Object-Oriented Programming (OOP) analysis of the Scikit-learn library. The main purpose of this project is to understand how Scikit-learn uses important OOP concepts such as inheritance, polymorphism, abstraction, and composition in its internal architecture. This repository also includes a custom machine learning extension built using standard Scikit-learn interfaces.
+
+---
 
 ## Authors (Group Members)
+
 * **Muhammad Bilal** — F25BDATS1M02098
 * **Maryam Tahir** — F25BDATS1M02051
 * **Jaweria Zafar** — F25BDATS1M02090
@@ -15,41 +18,63 @@ An exhaustive architectural investigation into the Object-Oriented Programming (
 ---
 
 ## Project Overview
-This project bridges the gap between software engineering theory and applied machine learning pipeline creation. It comprises two main artifacts:
-1. **The Formal Report:** A granular, code-level analysis tracking line-by-line engineering choices within Scikit-learn's underlying core system.
-2. **The Custom Extension:** A working, production-grade Python script implementing a custom transformer, classifier, and pipeline ecosystem that inherits from and complies with standard Scikit-learn Mixins.
+
+This project contains two main parts:
+
+1. **Formal Report:**  
+   A detailed analysis of Scikit-learn source code files such as `base.py`, `pipeline.py`, and `_logistic.py`. The report explains how OOP concepts are implemented inside the library.
+
+2. **Custom Extension:**  
+   A custom Python implementation containing a transformer, classifier, and pipeline system built using Scikit-learn Mixins and Base Classes.
 
 ---
 
-## Software Architecture & OOP Enforcement
-The custom framework developed within this project explicitly showcases the four pillars of Object-Oriented Programming:
+## Software Architecture & OOP Concepts
 
-### 1. Multiple Inheritance & Mixins
-Both `SmartClassifier` and `SmartTransformer` inherit concurrently from Scikit-Learn's structural layout.
-* `SmartClassifier` uses `BaseEstimator` and `ClassifierMixin` to automatically gain hyperparameter utilities and uniform validation properties.
-* `SmartTransformer` leverages `TransformerMixin` to acquire automatic `fit_transform()` behavior through boilerplate code reuse.
+The custom framework developed in this project demonstrates the four main pillars of Object-Oriented Programming.
 
-### 2. Polymorphism (Method Overriding)
-Standard behavioral workflows (`fit`, `predict`, `transform`, `score`) are overridden to execute custom math patterns while maintaining plug-and-play compatibility with native estimators.
+### 1. Inheritance & Mixins
+
+Both `SmartClassifier` and `SmartTransformer` inherit from Scikit-learn base classes.
+
+* `SmartClassifier` uses `BaseEstimator` and `ClassifierMixin`.
+* `SmartTransformer` uses `TransformerMixin` to get automatic `fit_transform()` functionality.
+
+This shows how Scikit-learn reuses code using inheritance and mixins.
+
+---
+
+### 2. Polymorphism
+
+Methods such as `fit()`, `predict()`, `transform()`, and `score()` are overridden with custom behavior while still following the standard Scikit-learn workflow.
+
+---
 
 ### 3. Abstraction
-Granular mathematical manipulations (such as data matrix centering, state constraints tracking via `check_array`, and multi-class bound logic parsing) are encapsulated away from the terminal client layer behind generic interface loops.
 
-### 4. Object Composition
-Rather than using heavy, deep structural inheritance trees, `SmartPipeline` implements a strict **Composition Pattern**. It acts as an independent execution orchestrator that holds and controls standalone component objects (`SmartTransformer` and `SmartClassifier`), respecting the software axiom: *"Favor object composition over class inheritance"*.
+Complex internal operations such as validation and data processing are hidden behind simple method interfaces. This makes the library easier to use.
 
 ---
 
-## Repository Blueprint
-Below is the accurate deployment structure of our project directories:
+### 4. Composition
+
+`SmartPipeline` follows the Composition pattern by combining separate objects like `SmartTransformer` and `SmartClassifier` instead of creating a deep inheritance structure.
+
+This follows the software design principle:
+
+*"Favor object composition over inheritance."*
+
+---
+
+## Repository Structure
 
 ```text
 SCIKIT-LEARN-OOP-ANALYSIS/
 │
-├── analyzed_files/       # Contains raw/processed data files used during system validation
-├── Code/                 # Core Python engine containing the custom_extension.py script
-├── diagrams/             # Visual UML, inheritance trees, and pipeline architecture diagrams
-├── Report/               # Formal academic technical analysis report document
+├── analyzed_files/       # Files used during analysis
+├── Code/                 # Custom Python implementation
+├── diagrams/             # UML and architecture diagrams
+├── Report/               # Final academic report
 │
-├── .gitignore            # Python environment and metadata runtime filter file
-└── README.md             # Project Blueprint & System Deployment Manual (This File)
+├── .gitignore            # Python environment filter file
+└── README.md             # Project documentation
