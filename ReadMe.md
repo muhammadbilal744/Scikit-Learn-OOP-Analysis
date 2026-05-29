@@ -2,10 +2,7 @@
 
 This project presents an Object-Oriented Programming (OOP) analysis of the Scikit-learn library. The main purpose of this project is to understand how Scikit-learn uses important OOP concepts such as inheritance, polymorphism, abstraction, and composition in its internal architecture. This repository also includes a custom machine learning extension built using standard Scikit-learn interfaces.
 
----
-
 ## Authors (Group Members)
-
 * **Muhammad Bilal** — F25BDATS1M02098
 * **Maryam Tahir** — F25BDATS1M02051
 * **Jaweria Zafar** — F25BDATS1M02090
@@ -16,6 +13,7 @@ This project presents an Object-Oriented Programming (OOP) analysis of the Sciki
 **Session:** 2026  
 
 ---
+
 ## Project Overview
 This project bridges the gap between software engineering theory and applied machine learning pipeline creation. It comprises two main artifacts:
 1. **The Formal Report:** A granular, code-level analysis tracking line-by-line engineering choices within Scikit-learn's underlying core system.
@@ -41,9 +39,11 @@ Granular mathematical manipulations (such as data matrix centering, state constr
 Rather than using heavy, deep structural inheritance trees, `SmartPipeline` implements a strict **Composition Pattern**. It acts as an independent execution orchestrator that holds and controls standalone component objects (`SmartTransformer` and `SmartClassifier`), respecting the software axiom: *"Favor object composition over class inheritance"*.
 
 ---
+
 ## Repository Blueprint
 Below is the accurate deployment structure of our project directories:
 
+```text
 SCIKIT-LEARN-OOP-ANALYSIS/
 │
 ├── analyzed_files/       # Contains raw/processed data files used during system validation
